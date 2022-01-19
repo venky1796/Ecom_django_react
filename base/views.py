@@ -142,6 +142,14 @@ def getProducts(request):
     return Response( serializer.data )
 
 
+@api_view(['GET'])
+def getTop(request):
+
+    products = Product.objects.filter(rating__gte=4).order_by('-rating')[0:5]
+    serializer = ProductSerializer(products, many=True)
+    
+    return Response(serializer.data)
+
 
 
 @api_view(['GET'])

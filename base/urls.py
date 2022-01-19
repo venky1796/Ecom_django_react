@@ -18,6 +18,7 @@ urlpatterns = [
     path('users/delete/<str:pk>/',views.deleteUser , name='user-delete' ),
 
     path('products/',views.getProducts , name='products' ),
+    path('products/top/',views.getTop , name='top-products' ),
     path('products/<str:pk>/',views.getProduct , name='product' ),
     path('products/<str:pk>/reviews/',views.createProductReview, name='product-review' ),
     path('products/delete/<str:pk>/',views.deleteProduct , name='product-delete' ),
